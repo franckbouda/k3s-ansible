@@ -12,3 +12,5 @@ terraform/.terraform/
 *.tfstate
 *.tfstate.backup
 .terraform
+/WARP.md
+CHANGELOG-CURSOR.md
