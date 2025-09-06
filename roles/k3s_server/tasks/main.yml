@@ -312,6 +312,12 @@
         line: 'export KUBECONFIG=~/.kube/config # Added by k3s-ansible'
         state: present
 
+    - name: Change server address in kubeconfig on control node
+      ansible.builtin.shell: |
+        KUBECONFIG={{ kubeconfig }} kubectl config set-cluster default --server=https://{{ api_endpoint }}:{{ api_port }}
+      delegate_to: 127.0.0.1
+      become: false
+
     - name: Configure kubectl autocomplete
       ansible.builtin.lineinfile:
         path: ~{{ ansible_user }}/.bashrc
