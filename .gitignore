@@ -3,4 +3,12 @@ venv
 .vscode
 .vagrant
 inventory.yml
-playbook/debug.yml
+.ansible/
+.history/
+.idea/
+.vagrant/
+terraform/.terraform/
+*.lock.hcl
+*.tfstate
+*.tfstate.backup
+.terraform
